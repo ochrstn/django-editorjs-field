@@ -1,0 +1,5 @@
+.vscode/
+__pycache__/
+dist/
+django_editorjs_field.egg-info/
+db.sqlite3
