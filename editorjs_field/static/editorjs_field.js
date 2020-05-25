@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const jsonOutputElement = document.getElementById(jsonOutputElementId);
     let initialContent = undefined;
     try {
-        initialContent = JSON.parse(jsonOutputElement.value);
+        initialContent = JSON.parse(decodeURIComponent(jsonOutputElement.value));
     } catch(e) {}
     const editor = new EditorJS({
         holder : 'codex-editor',

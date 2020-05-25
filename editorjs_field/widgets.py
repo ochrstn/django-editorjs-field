@@ -1,6 +1,6 @@
 from django.forms import widgets
 from django.template.loader import render_to_string
-
+import urllib.parse
 
 class EditorJsWidget(widgets.TextInput):
     class Media:
@@ -16,6 +16,8 @@ class EditorJsWidget(widgets.TextInput):
         super(EditorJsWidget, self).__init__(*args, **kwargs)
 
     def render(self, name, value, **kwargs):
+        if value:
+            value = urllib.parse.quote(value)
         ctx = {
             'name': name,
             'id': kwargs['attrs']['id'],
